@@ -70,7 +70,7 @@ void deleteFromLinkedListByValue(LinkedListT* ll, int value)
     NodeT* current = ll->head;
     if(current->data == value)
     {
-        printf("Need to delete head of this ll\n");
+        //printf("Need to delete head of this ll\n");
         deleteLinkedListFromHead(ll);
         return;
     }
@@ -83,15 +83,15 @@ void deleteFromLinkedListByValue(LinkedListT* ll, int value)
         {
             if(current->next == NULL)
             {
-                printf("Need to delete tail of this ll\n");
+                //printf("Need to delete tail of this ll\n");
                 deleteLinkedListFromTail(ll);
                 return;
             }
             else
             {
-                printf("Need to delete from middle of ll\n");
-                printf("previous data: %d\n", previous->data);
-                printf("current data: %d\n", current->data);
+                //printf("Need to delete from middle of ll\n");
+                //printf("previous data: %d\n", previous->data);
+                //printf("current data: %d\n", current->data);
                 previous->next = previous->next->next;
                 free(current);
                 return;
@@ -99,5 +99,31 @@ void deleteFromLinkedListByValue(LinkedListT* ll, int value)
         }
         previous = current;
         current = current->next;
+    }
+}
+
+void reverseLinkedList(LinkedListT* ll)
+{
+    NodeT* p_previous = ll->head;
+    NodeT* previous   = p_previous->next;
+    NodeT* current    = p_previous->next->next;
+
+    p_previous->next = NULL;
+    previous->next   = p_previous;
+    while(current)
+    {
+        p_previous     = previous;
+        previous       = current;
+        current        = current->next;
+        if(current)
+        {
+            //printf("p_previous: %d\n", p_previous->data);
+            //printf("previous: %d\n", previous->data);
+            //printf("current: %d\n", current->data);
+
+            previous->next = p_previous;
+        }
+        previous->next = p_previous;
+        ll->head = previous;
     }
 }

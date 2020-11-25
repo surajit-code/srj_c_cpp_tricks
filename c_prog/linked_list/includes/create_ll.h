@@ -18,5 +18,6 @@ void appendToLinkedList(LinkedListT* ll, int value);
 void deleteLinkedListFromHead(LinkedListT* ll);
 void deleteLinkedListFromTail(LinkedListT* ll);
 void deleteFromLinkedListByValue(LinkedListT* ll, int value);
+void reverseLinkedList(LinkedListT* ll);
 
 #endif

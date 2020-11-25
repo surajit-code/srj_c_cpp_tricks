@@ -1,6 +1,6 @@
 IDIR =./includes/
 CC=gcc
-CFLAGS=-Wall -I $(IDIR)
+CFLAGS=-g -Wall -I $(IDIR)
 
 
 linked_list: linked_list.o src/create_ll.o
