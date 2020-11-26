@@ -106,34 +106,30 @@ void reverseLinkedList(LinkedListT* ll)
 {
     NodeT* p_previous = ll->head;
     NodeT* previous   = p_previous->next;
-    if (previous==NULL)
+    if(previous==NULL)
+    {
         return;
+    }
 
-    NodeT* current    = p_previous->next->next;
-    if(current == NULL)
+    NodeT* current    = previous->next;
+    if(current==NULL)
     {
         p_previous->next = NULL;
         previous->next   = p_previous;
-        ll->head         = previous; 
+        ll->head         = previous;
         return;
     }
+
 
     p_previous->next = NULL;
     previous->next   = p_previous;
     while(current)
     {
-        p_previous     = previous;
-        previous       = current;
-        current        = current->next;
-        if(current)
-        {
-            //printf("p_previous: %d\n", p_previous->data);
-            //printf("previous: %d\n", previous->data);
-            //printf("current: %d\n", current->data);
+        p_previous = previous;
+        previous   = current;
+        current    = current->next;
 
-            previous->next = p_previous;
-        }
         previous->next = p_previous;
-        ll->head = previous;
     }
+    ll->head = previous;
 }
