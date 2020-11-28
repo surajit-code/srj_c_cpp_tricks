@@ -1,0 +1,8 @@
+# GDB thread navigation
+# Get all threads info
+  info threads
+# Get current thread id
+  t
+# Switch threads
+  t <thread_num>
+  
