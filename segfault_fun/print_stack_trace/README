@@ -28,4 +28,4 @@
   # If no, it will try to generate coredump by calling 
     void do_coredump(const kernel_siginfo_t *siginfo)
   # in the defined in the file 
-    tree/fs/coredump.c
+    fs/coredump.c
