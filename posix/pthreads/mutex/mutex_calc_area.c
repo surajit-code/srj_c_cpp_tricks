@@ -113,6 +113,10 @@ int main ()
         //int   pthread_join(pthread_t, void **);
         pthread_join(my_threads[i], &result);
         printf("Thread %d porcessed %d rectangles\n", i, *((int*) result));
+        if(result)
+        {
+            free(result);
+        }
     }
 
     return 0;
