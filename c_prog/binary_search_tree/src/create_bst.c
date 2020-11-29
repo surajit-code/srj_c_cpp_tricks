@@ -190,3 +190,65 @@ void deleteFromBinarySearchTree(BinarySearchTreeT* bt, int value)
         }
     }
 }
+
+void printInOrder(NodeT* thisNode) //left->root->right
+{
+    if(thisNode->left!=NULL)
+    {
+        printInOrder(thisNode->left);
+    }
+    printf("In order value: %d\n", thisNode->value);
+    if(thisNode->right)
+    {
+        printInOrder(thisNode->right);
+    }
+}
+void inOrderTraversal(BinarySearchTreeT* bst)
+{
+    printf("Begin In order traversal\n");
+    NodeT* current = bst->root;
+    printInOrder(current);
+    printf("End In order traversal\n");
+}
+
+void printPreOrder(NodeT* thisNode) //root->left->right
+{
+    printf("Pre order value: %d\n", thisNode->value);
+    if(thisNode->left != NULL)
+    {
+        printPreOrder(thisNode->left);
+    }
+    if(thisNode->right != NULL)
+    {
+        printPreOrder(thisNode->right);
+    }
+}
+void preOrderTraversal(BinarySearchTreeT* bst)
+{
+    printf("Begin Pre order traversal\n");
+    NodeT* current = bst->root;
+    printPreOrder(current);
+    printf("End Pre order traversal\n");
+
+}
+
+void printPostOrder(NodeT* thisNode) //left->right->root
+{
+    if(thisNode->left)
+    {
+        printPostOrder(thisNode->left);
+    }
+    if(thisNode->right)
+    {
+        printPostOrder(thisNode->right);
+    }
+    printf("Post order value: %d\n", thisNode->value);
+}
+
+void postOrderTraversal(BinarySearchTreeT* bst)
+{
+    printf("Begin Post order traversal\n");
+    NodeT* current = bst->root;
+    printPostOrder(current);
+    printf("End Post order traversal\n");
+}

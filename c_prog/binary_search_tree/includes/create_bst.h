@@ -27,4 +27,10 @@ void printBinarySearchTree (BinarySearchTreeT* bt);
 NodeT* lookInNode(NodeT* thisNode, int value);
 NodeT* searchBinarySearchTree(BinarySearchTreeT* bt, int value);
 void deleteFromBinarySearchTree(BinarySearchTreeT* bt, int value);
+void printInOrder(NodeT* thisNode);
+void inOrderTraversal(BinarySearchTreeT* bst);
+void printPreOrder(NodeT* thisNode);
+void preOrderTraversal(BinarySearchTreeT* bst);
+void printPostOrder(NodeT* thisNode);
+void postOrderTraversal(BinarySearchTreeT* bst);
 #endif

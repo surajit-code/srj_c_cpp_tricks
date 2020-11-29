@@ -24,5 +24,9 @@ int main()
     deleteFromBinarySearchTree(myBT, 5);
     deleteFromBinarySearchTree(myBT, 7);
 
+    inOrderTraversal(myBT);   //Will print the values in ascending order
+    preOrderTraversal(myBT);  //Will print the values in the order you inserted them
+    postOrderTraversal(myBT); //Will print the values in reverse of order of insertion
+
     return 0;
 }
