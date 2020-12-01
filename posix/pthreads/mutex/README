@@ -1,3 +1,9 @@
 # Get All Thread Stack Details at Runtime
   gstack `ps -e | grep mutex_calc_area | awk -F' ' '{ print $1 }'`
 
+# Thread details from process tree
+  ps -eLf | grep mutex_calc_area
+
+# Thread details from top
+  top -H | grep mutex_calc_area
+
